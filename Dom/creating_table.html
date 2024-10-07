@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function table(row,col){
+            const table = document.createElement("table")
+            console.log(table)
+            for(let i=0; i<row; i++){
+                const tr = document.createElement("tr")
+                for(let j=0; j<col; j++){
+                    const td = document.createElement("td")
+                    td.textContent=`cols ${j+1}`;
+                    tr.appendChild(td)
+                }
+                table.appendChild(tr)
+            }
+            document.body.appendChild(table);
+        }
+        table(2,4);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div style="border: 1px solid black; height: 300px; width: 200px;">
+
+        <input type="text" id="input1" placeholder="number" />
+        <input type="text" id="input2" placeholder="number" />
+
+        <input type="text" id="result" placeholder="output" />
+         <br>
+        <button onclick="Add()">Add</button>
+
+        <button onclick="minus()">Sub</button>
+
+        <button id="multi">Multiply</button>
+
+        <button id="div">Divide</button>
+
+    </div>
+
+    <script>
+
+        let input1 = document.getElementById("input1")
+        let input2 = document.getElementById("input2")
+        let output = document.getElementById("result")
+
+        let multiply = document.getElementById("multi")
+        let div = document.getElementById("div")
+
+        function Add()
+        {
+           let add1 = input1.value
+           let add2 = input2.value
+
+           let addvalues = Number(add1)+Number(add2)
+           output.value=addvalues
+        }
+
+        function minus(){
+            let min1 = input1.value
+            let min2 = input2.value
+
+            let minus = min1-min2
+            output.value=minus
+        }
+
+        multiply.addEventListener("click",function(){
+            let mul1 = input1.value
+            let mul2 = input2.value
+
+            let multiply = mul1*mul2
+            output.value=multiply
+        })
+
+        div.addEventListener("click",function(){
+            let div1 = input1.value
+            let div2 = input2.value
+
+            let divide = div1/div2
+
+            output.value=divide
+        })
+    </script>
+
+</body>
+</html>

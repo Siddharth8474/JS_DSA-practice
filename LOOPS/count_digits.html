@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function count(n){
+            let count=1;
+            let num=n;
+            for(num>0; num=Math.floor(num/10); ){
+                count++
+            }
+            return count;
+        }
+
+        console.log(count(14));
+    </script>
+
+</body>
+</html>

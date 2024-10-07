@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Given a function fn, return a memoized version of that function.
+
+    A memoized function is a function that will never be called twice with the same inputs. Instead it will return a cached value.
+
+    You can assume there are 3 possible input functions: sum, fib, and factorial.
+
+    sum accepts two integers a and b and returns a + b. Assume that if a value has already been cached for the arguments (b, a) where a != b, it cannot be used for the arguments (a, b). For example, if the arguments are (3, 2) and (2, 3), two separate calls should be made.
+    fib accepts a single integer n and returns 1 if n <= 1 or fib(n - 1) + fib(n - 2) otherwise.
+    factorial accepts a single integer n and returns 1 if n <= 1 or factorial(n - 1) * n otherwise. -->
+
+    <script>
+
+     function memo(fn){
+      let cacheValue = {}
+      //console.log(cacheValue)
+        return function(...args){
+           let key = args.toString()
+
+           if(cacheValue[key] !== undefined){
+            return cacheValue[key]
+           }
+
+           let result = fn(...args)
+           cacheValue[key] = result;
+           return result;
+        }
+     }
+      let count=0;
+    let fn = function(a,b){
+        count++
+     return a+b;
+    }
+
+    let fun = memo(fn);
+
+    console.log(fun(2,8));//function call only once coz value is same
+    console.log(fun(2,8));//function call only once coz value is same
+    console.log(fun(9,6));//function call second time here coz value is diffrent
+    console.log('function call',count)
+
+    </script>
+</body>
+</html>

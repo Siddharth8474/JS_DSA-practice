@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arrayNum = [3,4,5,7,9,6,2];
+        let even = [];
+
+        //with itration
+        // for(let i=0; i<arrayNum.length; i++){
+        //   if(arrayNum[i]%2==0){
+        //     even.push(arrayNum[i])
+        //   } 
+        // }
+        // console.log(even)
+
+        //using filter
+
+        // filter method returns a new array after applying the condition 
+        // filter method will always return array which is equal  or less than the  length  of original array
+       // original array is the array on which the filter method is applied
+       // filtering always reqires some kind of condition to remove the elements
+
+        let NumEven = arrayNum.filter((ele)=>{
+            if(ele%2==0){
+                return ele
+            }
+        })
+        console.log(NumEven)
+
+    </script>
+</body>
+</html>

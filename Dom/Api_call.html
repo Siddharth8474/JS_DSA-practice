@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--Question: Create a button that, when clicked, fetches data from an API and updates the DOM with the fetched data.-->
+
+    <button id="btn" onclick="fetchigData()">data</button>
+    <div id="data"></div>
+
+    <script>
+        function fetchigData(){
+            const btn = document.getElementById("btn")
+            let fetchData = 'https://jsonplaceholder.typicode.com/todos/3'
+            btn.addEventListener("click",()=>{
+              fetch(fetchData)
+              .then(response=>response.json())
+              .then(data=>{
+                 const dta = document.getElementById("data")
+                 dta.innerHTML = `<h2>${data.title}</h2> <p>${data.id}</p>`
+              }).catch(err=>
+                    console.log("error",err)
+              )
+            })
+        }
+    </script>
+
+</body>
+</html>

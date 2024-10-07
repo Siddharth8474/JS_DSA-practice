@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- How would you merge two JavaScript objects, obj1 and obj2, so that the properties from obj2 overwrite those in obj1 if they exist in both objects?
+ *  Demonstrate this using the spread operator. -->
+
+ <script>
+
+  const obj1 = {
+    name:'alice',
+    age:25,
+    contry:'usa'
+  }
+
+  const obj2 = {
+    age:30,
+    contry:'canada',
+    profession:'developer'
+  }
+
+  const margeObj ={
+    ...obj1,
+    ...obj2
+  }
+
+  console.log(margeObj);
+
+ </script>
+
+</body>
+</html>

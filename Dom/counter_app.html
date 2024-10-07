@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2 id="co" style="margin-left: 70px;">0</h2>
+
+    <button onclick="dec()">decrement</button>
+    <button onclick="incre()" id="bt">increment</button>
+
+    <script>
+                 function incre(){
+                    const ele = document.getElementById("co")
+                    ele.textContent=parseInt(ele.textContent)+1;    
+                 }
+
+                 function dec(){
+                    const ele = document.getElementById("co")
+                    ele.textContent=parseInt(ele.textContent)-1;
+                 }
+    </script>
+
+</body>
+</html>

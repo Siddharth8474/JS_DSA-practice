@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+//  * Write a JavaScript function that takes an object as an 
+//  * input and returns a new object where the keys are the original keys in uppercase. 
+//  * Use Object.keys and the map method.
+
+     function keysToUpperCase(obj){
+       
+        const newObj = {}
+
+        for(let key in obj){
+            if(obj.hasOwnProperty(key)){
+                newObj[key.toUpperCase()]=obj[key]
+            }
+        }
+        return newObj
+
+     } 
+
+     const originalObj = {name:'john',age:30,country:'usa'}
+
+     let functionCall = keysToUpperCase(originalObj)
+     console.log(functionCall)
+
+
+
+    </script>
+
+</body>
+</html>

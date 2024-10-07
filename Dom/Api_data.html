@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="formData">
+       <input type="text" id="name" />
+       <input type="text" id="email" />
+       <button onclick="ApiData()">send data</button>
+    </form>
+    <div id="result"></div>
+    <h2 id="err" style="display: none;">both are required</h2>
+
+    <script>
+        function ApiData(){
+            event.preventDefault()
+
+            let msg =document.getElementById("err")
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            if(!name || !email){
+                msg.style.display="block"
+            }
+            else{
+                msg.style.display="none"
+
+            //sending the data
+
+            fetch('https://jsonplaceholder.typicode.com/todos',{
+                method:"POST",
+                headers: {
+                    'content-type':'application/json'
+                },
+
+                body:JSON.stringify({
+                    name:name,
+                    email:email
+                })  
+            })
+            .then(response => response.json())
+            .then(data=>{
+                // return(`https://jsonplaceholder.typicode.com/todos/${data.id}`)
+                
+                const result = document.getElementById("result")
+                const newData = document.createElement("h3")
+                newData.innerHTML = `<h2>${data.name}</h2> <h4>${data.email}</h4>`;
+                result.appendChild(newData)
+
+            }).catch(err=>{
+                console.log("error",err);
+            })
+            
+        }
+    }
+    </script>
+
+</body>
+</html>

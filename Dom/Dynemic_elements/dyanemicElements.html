@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h1 class="one">Heading one</h1>
+        <h1 class="one">Heading one</h1>
+        <h1 class="one">Heading one</h1>
+        <h1 class="one">Heading one</h1>
+
+        <button onclick="clr()" >color</button>
+    </div>
+
+    <br>
+  
+    <input type="text" id="input" />
+
+    <button class="btns">1</button>
+    <button class="btns">2</button>
+    <button class="btns">3</button>
+    <button class="btns">4</button>
+    <button class="btns">5</button>
+
+    
+
+   <div style="margin-top: 80px;">
+    <input type="text" id="input1">
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+    <button class="btn">3</button>
+    <button class="btn">4</button>
+    <button class="btn">5</button>
+</div>
+
+
+
+    <script>
+        function clr(){
+        const heading1 = document.getElementsByClassName("one")
+        //heading1[1].style.color="blue"
+
+        for(let i=0; i<heading1.length; i++){
+            heading1[i].style.color="red";
+            
+        }
+    }
+
+    const input = document.getElementById("input")
+
+    const btns = document.getElementsByClassName("btns")
+    for(let i=0; i<btns.length; i++){
+        btns[i].addEventListener("click",function(event){
+            //console.log(event.target)
+            console.log(event.target.innerText)
+            document.getElementById("input").value=document.getElementById("input").value+event.target.innerText
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+    // Create 5 buttons with same class name called btn ,with text as 1,2,3,4,5
+
+// And create an input field when the button gets clicked show the button text as value on 
+// the inputfield
+
+
+    const btn = document.getElementsByClassName("btn")
+    for(let i=0; i<btn.length; i++){
+        btn[i].addEventListener("click",function(event){
+         //console.log(event.target.innerText)
+         document.getElementById("input1").value = document.getElementById("input1").value+event.target.innerText
+        })
+    }
+
+
+    </script>
+
+</body>
+</html>

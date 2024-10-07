@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Create a function that takes an object and returns an array of entries, where each entry is [key, value] but the value is doubled if it is a number.
+ *  Use Object.entries and map. -->
+
+ <script>
+
+function IfKeyNumReturnValueDouble(obj){
+
+    return Object.entries(obj).map(([key,value])=>{
+        if(typeof value == 'number'){
+            return [key,value*2]
+        }
+        return [key,value]
+    })
+
+}
+
+const originalArray ={name:'sidd',age:25,country:'usa',score:90,isStudent:true}
+
+const fun = IfKeyNumReturnValueDouble(originalArray)
+console.log(fun)
+
+
+
+ </script>
+
+</body>
+</html>

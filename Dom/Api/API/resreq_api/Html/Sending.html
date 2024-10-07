@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="margin-left: 600px;">
+    <input type="text" id="name" placeholder="enter name" />
+    <br>
+    <input type="text" id="email" placeholder="enter email" /><br>
+    <button onclick="sendingData()">sendData</button>
+</div>
+
+ <h3 id="re"></h3>
+
+
+     <script>
+        function sendingData(){
+            event.preventDefault()
+            const name = document.getElementById("name").value
+            const email = document.getElementById("email").value
+
+            let Api = 'https://reqres.in/api/users'
+
+            const datas={
+               name:name,
+               email:email
+            }
+
+            fetch(Api,{
+                method:"POST",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(datas)
+            })
+            
+            .then(response=>response.json())
+            .then(result=>{
+                document.getElementById("re").textContent= `User ID ${result.id}`
+               localStorage.setItem('user',JSON.stringify(datas))
+             
+            }).catch(err=>{
+                console.log(err)
+            })
+        }
+     </script>
+
+</body>
+</html>

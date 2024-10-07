@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+         function GuishNum(num){
+
+            if(num<1 || num>100){
+                console.log("invalid input");
+                return;
+            }
+
+            let lowlogged=false;
+            let highlogged=false;
+            let correctlogged=false
+
+            for(let i=1; i<=100; i++){
+                if(i<num && !lowlogged){
+                    console.log("low to guish");
+                    lowlogged=true
+                }
+
+                else if(i>num && !highlogged){
+                     console.log("high to guish");
+                     highlogged=true
+                }
+
+                else if(i===num && !correctlogged){
+                    console.log(`correct num is this ${num}`)
+                    correctlogged=true
+                }
+                
+                if (lowlogged && correctlogged && highlogged) {
+              break;
+                }
+            }
+         }
+
+         GuishNum(20)
+        
+    </script>
+
+</body>
+</html>

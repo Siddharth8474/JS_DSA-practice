@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="result"></div>
+
+    <script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const id = localStorage.getItem('DataId');
+      if (id) {
+        const api = `https://jsonplaceholder.typicode.com/todos/200`;
+
+        fetch(api)
+
+          .then(response => response.json())
+          .then(data => {
+            const ele = document.getElementById("result");
+            ele.innerHTML = `<h3>Title: ${data.title}</h3> <h3>Completed: ${data.completed}</h3>`;
+          })
+          .catch(err => {
+            console.log("Error:", err);
+          });
+      } else {
+        const result = document.getElementById("result");
+        result.innerHTML = `<p>No data found. Please send data first.</p>`;
+    
+      }
+    });
+    
+
+  </script>
+
+</body>
+</html>

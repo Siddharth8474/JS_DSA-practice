@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="result"></div>
+    
+    <script>
+           function gettingData(){
+        const getData = localStorage.getItem('user')
+        const  store = JSON.parse(getData) || [];
+         const result = document.getElementById("result")
+         //result.innerHTML = ''
+         const newData = document.createElement("h4")
+         newData.innerHTML =`Name : ${store.name}  Email : ${store.email}`
+         result.appendChild(newData);
+           }
+         document.addEventListener("DOMContentLoaded", () => {
+            gettingData()
+        });
+
+        // function displayStoredData() {
+        //     const storedData = JSON.parse(localStorage.getItem('user')) || [];
+        //     const result = document.getElementById("result");
+        //    // result.innerHTML = ''; // Clear previous content
+
+        //     storedData.forEach(data => {
+        //         const newData = document.createElement("h4");
+        //         newData.textContent = `Name: ${data.name}, Email: ${data.email}`;
+        //         result.appendChild(newData);
+        //     });
+        // }
+
+        // // Display stored data when the page is loaded
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     displayStoredData();
+        // });
+
+           
+         
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Find the Missing Number in an Arithmetic Progression:
+        const progressionArray = [5, 10, 15, 25, 30];
+
+        for(let i=0; i<progressionArray.length-1; i++){
+            const itragth = progressionArray[i]
+            const next = progressionArray[i + 1]
+
+             if(next-itragth !== 5){
+                let mis = itragth + 5
+                console.log(mis)
+            }
+            
+        }
+
+    </script>
+
+</body>
+</html>

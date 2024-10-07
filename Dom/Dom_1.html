@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>first pers</p>
+
+    <div id="a">first_div</div>
+    <div class="b">seond_div</div>
+    <div class="b">third_div</div>
+    <div class="b">fourth_div</div>
+    <div class="b">fiveth_div</div>
+    <div id="c">sixth_div</div>
+
+    <script>
+        function dom(){
+            const first_pera = document.querySelector('p');
+            console.log(first_pera.textContent)
+        }
+        dom()
+
+        function dom1(){
+            const idName = document.getElementById("a");
+            console.log(idName.textContent)
+
+            const className = document.getElementsByClassName("b")
+            for(let ele of className){
+            console.log(ele.textContent)
+            }
+
+            const tagName = document.getElementsByTagName("div")
+            for(let elee of tagName){
+            console.log(elee.textContent)
+            }
+        }
+
+        dom1()
+
+    </script>
+
+</body>
+</html>

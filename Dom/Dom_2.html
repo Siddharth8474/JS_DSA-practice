@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="a">changing content</div>
+    <div id="b">changing content</div>
+
+    <script>
+        function changing_content(){
+            const c = document.getElementById("a")
+            c.textContent="content changed";
+            console.log(c)
+        }
+        changing_content()
+
+        function changing(){
+            const a = document.getElementById("b")
+            a.innerHTML='<p>changed to p</p>';
+            console.log(a)
+        }
+        changing()
+
+
+    </script>
+
+</body>
+</html>

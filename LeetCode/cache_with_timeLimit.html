@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Write a class that allows getting and setting key-value pairs, however a time until expiration is associated with each key.
+The class has three public methods:
+set(key, value, duration): accepts an integer key, an integer value, and a duration in milliseconds. Once the duration has elapsed, the key should be inaccessible. The method should return true if the same un-expired key already exists and false otherwise. Both the value and duration should be overwritten if the key already exists.
+get(key): if an un-expired key exists, it should return the associated value. Otherwise it should return -1.
+count(): returns the count of un-expired keys. -->
+
+    <script>
+
+     class TimeLimitCache{
+          constructor(){
+            this.cache = new Map();
+          }
+
+          set(key,value,duration){
+            const keyAvailable = this.cache.has(key); // check if key available
+            const keyExpiry = Date.now()+duration;    // key expiry time
+            this.cache.set(key,{value,keyExpiry})  //store the key 
+
+            setTimeout(()=>{
+                if(Date.now() >= keyExpiry){
+                    this.cache.delete(key)
+                }
+            },duration)
+
+            return keyAvailable;
+          } 
+
+          
+          get(key){
+              let gettingKeys =  this.cache.get(key)
+
+              if(gettingKeys  && Date.now() < gettingKeys.keyExpiry){
+                return gettingKeys.value
+              }
+
+              return -1;
+          }
+
+          count(){
+            let count = 0;
+            let currentTime = Date.now()
+
+            this.cache.forEach(({expiryTime}) => {
+                if(currentTime < expiryTime){
+                    count++
+                }
+            })
+            return count;
+          }
+
+     }
+
+     const fn = new TimeLimitCache();
+
+     console.log(fn.set(10,15,3000))
+     console.log(fn.get(10))
+     console.log(fn.count())
+     setTimeout(()=>{
+        console.log(fn.get(10))
+     },2500)
+
+    </script>
+</body>
+</html>

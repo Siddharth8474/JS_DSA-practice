@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function call(name,callback){
+            console.log(`hellow,${name}`)
+            callback();
+        }
+
+        function calls(){
+            console.log("this is first callback")
+        }
+
+        call(`sidd`,calls)
+    </script>
+
+</body>
+</html>

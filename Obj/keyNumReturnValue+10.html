@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Create a function that takes an object and returns a new object where all numeric values are increased by 10, but non-numeric values are left unchanged. 
+ * Use Object.entries, filter, and map. -->
+
+ <script>
+
+   function KeyNumValuePlus10(obj){
+
+    return Object.fromEntries(
+        Object.entries(obj).map(([key,value])=>{
+            if(typeof value == 'number'){
+                return [key,value+10]
+            }
+            else{
+                return [key,value]
+            }
+        })
+    )
+
+   }
+
+   const originalObj = {
+    name:'alice',
+    age:25,
+    city:'wonderland',
+    score:50
+   }
+
+   const fun = KeyNumValuePlus10(originalObj)
+   console.log(fun )
+
+ </script>
+
+</body>
+</html>

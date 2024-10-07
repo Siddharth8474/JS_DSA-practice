@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let arr = [{name: "John", grade: "B"}, {name: "Jane", grade: "A"}, {name: "Jim", grade: "C"}]
+        let filtered = arr.filter((ele)=>{
+            return ele.grade.toLocaleLowerCase() === "a"
+        })
+        console.log(filtered)
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+     let people = [
+        {name:'alish',age:25,city:'usa'},
+        {name:'Bob',age:17,city:'Canada'},
+        {name:'charlie',age:19,city:'uk'},
+        {name:'david',age:16,city:'australia'},
+        {name:'eve',age:22,city:'germany'}
+     ]
+
+     const adult = people.filter(pepl=>pepl.age>=18)
+
+     console.log('afterFiltering',adult) 
+
+     const isAdult = adult.map(person=>({
+        ...person,
+        isAdult:true
+     }));
+     console.log(isAdult)
+
+     adult.splice(0,2);
+     adult.unshift({name:'jara',age:30,country:'india',isAdult:true});
+
+     console.log(adult)   
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="clr">color changing</p>
+
+    <script>
+        function clr(){
+            const clr= document.getElementById("clr")
+            clr.addEventListener("mouseover",()=>{
+                clr.style.color="blue";
+            })
+
+            clr.addEventListener("mouseout",()=>{
+                clr.style.color="red";
+            })
+        }
+        clr()
+    </script>
+
+</body>
+</html>

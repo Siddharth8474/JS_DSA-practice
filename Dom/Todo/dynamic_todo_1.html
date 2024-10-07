@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input" />
+    <button id="btn">
+        Add todo
+    </button>
+
+    <ul id="list">
+
+    </ul>
+
+    <script>
+
+      let input = document.getElementById("input")
+      let btn = document.getElementById("btn")
+      let list = document.getElementById("list")
+
+      let EditLi = null;
+
+      
+      btn.addEventListener("click",function(){
+         let InputValue= input.value
+         //console.log(InputValue)
+         if(btn.innerText=="Update"){
+            EditLi.childNodes[0].nodeValue=InputValue
+            btn.innerText="Add todo";
+           // EditLi = null;
+            input.value = ""
+          }
+
+          else{
+
+         const li = document.createElement("li")
+
+         let DltBtn = document.createElement("button")
+         DltBtn.innerText = "delete";
+
+         DltBtn.addEventListener("click",function(event){
+           list.removeChild(event.target.closest("li"))
+        })
+
+          let EditBtn = document.createElement("button")
+          EditBtn.innerText="Edit";
+
+          EditBtn.addEventListener("click",function(event){
+            let listTag = event.target.closest("li")
+            console.log(listTag)
+            let splitedArray = listTag.innerText.split("delete")
+            console.log(splitedArray[0])
+            
+            input.value = splitedArray[0]
+
+            btn.innerText="Update";
+            EditLi=listTag
+          })
+  
+         li.append(InputValue,DltBtn,EditBtn)
+         list.append(li)
+
+        }
+         input.value = "";
+      })
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function SecondLargest(arr){
+            let largest = arr[0];
+            let SecondLargestNum = null;
+
+            for(let i=1; i<arr.length;i++){
+                if(arr[i]>largest){
+                   SecondLargestNum = largest;
+                   largest = arr[i];
+                }
+
+                else if(arr[i]<largest && (SecondLargestNum == null || arr[i] > SecondLargestNum)){
+                     SecondLargestNum = arr[i]
+                }
+            }
+            return SecondLargestNum
+        }
+
+        const arr = [5, 3, 8, 6, 2, 8, 4];
+        console.log(SecondLargest(arr))
+    </script>
+</body>
+</html>

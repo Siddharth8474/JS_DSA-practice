@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="text" id="input" />
+        <button id="btn">ADD To Do</button>
+        <ul id="list">
+
+        </ul>
+    </div>
+
+    <script>
+        let input = document.getElementById("input")
+        let list = document.getElementById("list")
+        let btn = document.getElementById("btn")
+
+        btn.addEventListener("click",function(){
+            let InputValue = input.value
+           // list.innerHTML=`${list.innerHTML} <li>${InputValue}</li>`
+
+           const listItem = document.createElement("li")
+           listItem.innerHTML=InputValue;
+           list.appendChild(listItem)
+        })
+    </script>
+
+</body>
+</html>

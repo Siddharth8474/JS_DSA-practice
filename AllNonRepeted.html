@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+       const str = 'siddharth'
+       const obj = {}
+       const Arry = []
+
+       for(let i=0; i<str.length; i++){
+        const chtr = str[i]
+        obj[chtr] = (obj[chtr] || 0)+1
+        console.log(obj)
+       }
+
+        for(let i=0; i<str.length; i++){
+            if(obj[str[i]] == 1){
+             Arry.push(str[i])
+            }
+        }
+        console.log(Arry)
+
+    </script>
+</body>
+</html>

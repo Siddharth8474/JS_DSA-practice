@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">submit</button>
+
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        const int = document.getElementById("list")
+        let count=1;
+        const btn = document.getElementById("btn")
+        btn.addEventListener("click",function(){
+            const element = document.createElement("li")
+            element.innerText=count
+            int.appendChild(element)
+            count++
+        })
+    </script>
+
+</body>
+</html>

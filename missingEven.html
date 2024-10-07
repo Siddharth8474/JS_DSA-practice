@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //missing even
+
+     const EvenArray = [4,6,8,12,14]
+
+     for(let i=0; i<EvenArray.length-1; i++){
+        let curruntArray = EvenArray[i];
+        let next = EvenArray[i + 1];
+
+        if(next - curruntArray !== 2){
+            let missingEven = curruntArray + 2
+            console.log(missingEven)
+        }
+       // console.log(curruntArray)
+     }
+
+    </script>
+</body>
+</html>

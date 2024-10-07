@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="inputs" style="margin-left: 600px;">
+
+        <!-- <input type="text" id="title" placeholder="Enter title"><br>
+        <input type="text" id="completed" placeholder="Enter status (true/false)" style="margin-top: 20px;"><br> -->
+
+    <input type="text" id="name" placeholder="enter name"><br>
+    <input type="text" id="email" placeholder="enter email" style="margin-top: 20px;"><br>
+    <button style="margin-top: 10px;" onclick="sendToApi()">send data</button>
+     </div>
+
+     <script>
+        function sendToApi(){
+        
+            const name = document.getElementById("name").value
+            const email = document.getElementById("email").value
+
+            // const title = document.getElementById("title").value;
+            // const completed = document.getElementById("completed").value;
+            let api =  `https://jsonplaceholder.typicode.com/todos`
+
+            let MyData = {
+                title:name,
+                completed:email==true
+
+                // title: title,
+                // completed: completed === 'true'
+            }
+
+            // let stringify = JSON.stringify(MyData)
+            fetch(api,{
+              method:"POST",
+              headers:{
+                'content-type':'application/json'
+              },
+              body:JSON.stringify(MyData)
+            })
+            .then(response=>response.json())
+            .then(data=>{
+                localStorage.setItem('DataId',data.id)
+                alert("data sent successfully" + data.id);
+            }).catch(err=>{
+                console.log("error",err)
+            })
+            
+        }
+     </script>
+
+     
+
+</body>
+</html>

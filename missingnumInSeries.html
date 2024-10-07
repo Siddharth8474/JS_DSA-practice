@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const multiplesOfThree = [3, 6, 12, 15, 18];
+
+        for(let i=0; i<multiplesOfThree.length-1; i++){
+           const exitsNum = multiplesOfThree[i];
+           const next = multiplesOfThree[i + 1];
+
+           if(next-exitsNum !== 3){
+            let missingNum = exitsNum+3
+            console.log(missingNum)
+           }
+
+          // console.log(exitsNum)
+        }
+    </script>
+
+</body>
+</html>

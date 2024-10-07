@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+         function dublicate(arr){
+            let obj = {}
+            let dub = []
+
+            for(let i=0; i<arr.length; i++){
+                let elements = arr[i]
+                if(!obj[elements]){
+                    obj[elements]=true
+                    dub.push(elements)
+                }
+            }
+            return dub
+
+         }
+
+        const arr = [1, 2, 3, 2, 4, 1, 5, 6, 4];
+        console.log(dublicate(arr))
+
+
+        // using methods
+
+        function dubli(arr1){
+          return arr1.filter((element,index) => arr1.indexOf(element) == index)
+        }
+
+        const arr1 = [1, 2, 3, 2, 4, 1, 5, 6, 4];
+        console.log(dubli(arr1))
+
+    </script>
+</body>
+</html>

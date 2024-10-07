@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+         function thirdLargest(arr){
+            let largest = arr[0];
+            let SecondLargest = null;
+            let thirdLargest = null;
+
+            for(let i=1; i<arr.length; i++){
+                if(arr[i] > largest){
+                    thirdLargest = SecondLargest
+                    SecondLargest = largest
+                    largest = arr[i]
+                }
+
+                else if(arr[i]<largest && arr[i]>SecondLargest){
+                    thirdLargest = SecondLargest
+                   SecondLargest = arr[i];
+                }
+
+                else if(arr[i] > thirdLargest && arr[i]<SecondLargest){
+                    thirdLargest = arr[i];
+                }
+
+            }
+            return thirdLargest
+         }
+
+        const arr = [2,1,5,1,0,8];      
+          console.log(thirdLargest(arr))
+    </script>
+</body>
+</html>

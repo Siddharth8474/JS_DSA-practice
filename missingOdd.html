@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //find missing odd
+        //output = 13
+
+     const array = [7,9,11,15,17,19]
+
+     for(let i=0; i<array.length; i++){
+        let currunt = array[i]
+        let next = array[i + 1];
+       // console.log(next)
+
+        if(next - currunt !== 2){
+            let missing = currunt + 2
+            console.log(missing)
+            break;
+        }
+        
+     }
+     
+
+    </script>
+
+</body>
+</html>

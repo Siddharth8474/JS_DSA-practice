@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+       function FindCommon(arr1,arr2){
+           let obj = {}
+           let common = []
+           let count = 0;
+
+           for(let i=0; i<arr1.length; i++){
+            let arr1Elements = arr1[i]
+            obj[arr1Elements] = true
+           }
+
+           for(let i=0; i<arr2.length; i++){
+            let arr2Elements = arr2[i];
+            if(obj[arr2Elements]){
+                common.push(arr2Elements)
+                count++
+            }
+           }
+           return {common,count}
+
+       }
+
+        const arr1 = [1, 2, 3, 4, 5];
+        const arr2 = [3, 4, 5, 6, 7];
+
+        const fun = FindCommon(arr1,arr2)
+        console.log(fun)
+
+
+
+        //alternative option
+
+        function common(arry1,arry2){
+           let cmn = [];
+
+           for(let i=0; i<arry1.length; i++){
+            for(let j=0; j<arry2.length; j++){
+                if(arry1[i] == arry2[j]){
+                    cmn.push(arry2[j])
+                }
+            }
+           }
+           return cmn
+        }
+
+        const arry1 = [1, 2, 3, 4, 5];
+        const arry2 = [3, 4, 5, 6, 7];
+
+        const fn = common(arry1,arr2)
+
+       // console.log(fn)
+
+
+    </script>
+
+</body>
+</html>

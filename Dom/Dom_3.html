@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="add_remove">class changing</div>
+    <div class="add_remove">class changing</div>
+    <div class="add_remove">class changing</div>
+    <div class="add_remove">class changing</div>
+
+    <script>
+        //classList can only itrate one element and getElementsByClassName collection of data so first we have to itrate the element so we used forloop for itrate the element but this is working but not properly
+        function add_remove_class(){
+            // const cl = document.getElementsByClassName("add_remove")
+            // for(let i=0; i<cl.length; i++){
+            // cl[i].classList.add("newClass");
+            // cl[i].classList.remove("add_remove");
+            // }
+            // console.log(cl)
+
+       
+            //Array.from(document.getElementsByClassName("add_remove")) converts the live HTMLCollection to a static array.
+            //and
+            //forEach iterates over each element in the array.
+
+            const cl =Array.from( document.getElementsByClassName("add_remove"));
+            cl.forEach(element=>{
+            element.classList.add("newClass");
+            element.classList.remove("add_remove");
+        });
+            console.log(cl)
+        }
+        add_remove_class()
+    </script>
+
+</body>
+</html>

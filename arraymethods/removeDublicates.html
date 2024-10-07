@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+      // let arr = [1,2,3,3,2,4,5,1,6,7,7,];
+      // let dublicate =[];
+
+      // arr.filter((ele)=>{
+      //   if(dublicate.indexOf(ele) ==-1 ){
+      //       dublicate.push(ele)
+      //   }
+      //   return ele
+      // })
+      // console.log(dublicate) 
+
+
+      // without methhod
+      let arr1 = [1,2,3,3,2,4,5,1,6,7,7,];
+      let obj = {}
+      let dublicated = [];
+
+      for(let i=0; i<arr1.length; i++){
+        let itratearr = arr1[i];
+
+        if(obj[itratearr]){
+          obj[itratearr]++
+        }
+
+        else{
+          obj[itratearr] = 1
+        }
+      }
+
+        let keys = Object.keys(obj)
+
+        for(let i=0; i<keys.length; i++){
+         if(obj[keys[i]]>1){
+          dublicated.push(parseInt( keys[i]))
+         }
+        }
+        console.log(dublicated)
+       // console.log(obj)
+       
+      
+
+    </script>
+
+</body>
+</html>

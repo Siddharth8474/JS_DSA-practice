@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="text" id="input" />
+        <div>
+            <button  class="numericBtn">7</button>
+            <button  class="numericBtn">8</button>
+            <button  class="numericBtn">9</button>
+           <button onclick="opration('*')">*</button>
+
+     <br>
+            
+            <button  class="numericBtn">4</button>
+            <button  class="numericBtn">5</button>
+            <button  class="numericBtn">6</button>
+            <button onclick="opration('-')">-</button>
+
+   <br>
+            <button  class="numericBtn">1</button>
+            <button  class="numericBtn">2</button>
+            <button  class="numericBtn">3</button>
+            <button onclick="opration('+')">+</button>
+<br>
+            <button>0</button>
+            <button onclick="opration('/')">/</button>
+
+
+        </div>
+
+        <div class="operationBtn">
+            
+            <button onclick="clculate()">=</button>
+        </div>
+
+    </div>
+
+    <script>
+        const input = document.getElementById("input")
+        const nBtn = document.getElementsByClassName("numericBtn")
+        const oBtn = document.getElementsByClassName("operationBtn")
+
+        for(let i=0; i<nBtn.length; i++){
+            nBtn[i].addEventListener("click",function(event){
+              input.value=input.value+event.target.innerText
+            })
+
+            function opration (opration){
+                input.value += `${opration}`;
+            }
+
+            function clculate(){
+                input.value = eval(input.value)
+            }
+
+        }
+    </script>
+
+</body>
+</html>

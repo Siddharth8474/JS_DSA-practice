@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+  <!-- Given an object with different properties, write a function that filters out properties whose values are not strings. 
+  Use Object.values along with the filter method. -->
+
+  <script>
+
+   function filterNonStringProperties(obj){
+
+    // newObj = {}
+
+    // Object.keys(obj).forEach(key => {
+    //     if(typeof obj[key] == 'string'){
+    //         newObj[key]=obj[key]
+    //     }
+    // });
+
+    // return newObj
+
+
+    return Object.fromEntries(
+        Object.entries(obj).filter(([key,value]) => typeof value == 'string')
+    )
+
+   }
+
+   const originalArray = {name:'alice',age:25,country:'usa',isStudent:true,profession:'engineer'}
+
+   const fun = filterNonStringProperties(originalArray)
+
+   console.log(fun)
+
+  </script>
+
+</body>
+</html>

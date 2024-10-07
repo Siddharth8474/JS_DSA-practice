@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function findSecondNonRepeted(str,n){
+
+            const obj = {}
+           
+            for(let i=0; i<str.length; i++){
+                const characters = str[i]
+                obj[characters] = (obj[characters] || 0) + 1
+                console.log(obj)
+            }
+
+            let count = 0;
+
+            for(let i=0; i<str.length; i++){
+                const chtr = str[i]
+                if(obj[chtr] == 1){
+                    count ++
+                    if(count == n){
+                        return chtr
+                    }
+                    
+                }
+            }
+            return null
+        }
+
+         console.log(findSecondNonRepeted('swiss',2))
+     
+    </script>
+
+</body>
+</html>
